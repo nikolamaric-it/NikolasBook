@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col s12 l6 offset-l3">
+    <h3>Accedi</h3>
+
+    <br>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me, class: "filled-in" %>
+          <%= f.label :ricordami %>
+        </div>
+      <% end %>
+
+      <br>
+
+      <div class="actions">
+        <%= f.submit "Accedi", class: "waves-effect waves-light btn btn-devise-input deep-orange darken-4" %>
+      </div>
+    <% end %>
+
+    <br>
+
+    <%= render "devise/shared/links" %>
+
+ </div>
+</div>

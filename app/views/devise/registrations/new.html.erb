@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col s12 l6 offset-l3">
+    <h3>Registrati</h3>
+    
+    <br>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :nome %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> caratteri minimo)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :conferma_password %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <br>
+
+    <div class="actions">
+      <%= f.submit "Registrati", class: "waves-effect waves-light btn btn-devise-input deep-orange darken-4" %>
+    </div>
+    <% end %>
+
+   <br>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

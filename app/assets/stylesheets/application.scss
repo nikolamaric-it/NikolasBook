@@ -1,0 +1,122 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "materialize";
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #d7ccc8;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin-top: 0;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+a {
+    color: #bf360c;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #795548;
+  box-shadow: 0 1px 0 0 #795548;
+  
+}
+
+input[type=submit] {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 0;
+}
+
+i.btn {
+    padding: 0;
+}
+
+.tabs .tab a {
+    color: #ff7043;
+  }
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    color: #bf360c;
+}
+
+.tabs .indicator {
+    background-color: #bf360c;
+  }
+
+.btn {
+    width: 100%;
+}
+
+.btn-devise-link {
+    color: #bf360c;
+}
+
+.btn-devise-input {
+    color: #fff;
+}
+
+.waves-button-input {
+    color: #fff;
+}
+
+.show-img {
+    padding-right: 5%;
+}
+
+.show-price {
+    font-size: 2em;
+}
+
+.card-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.content-show {
+    margin-top: 5%;
+}
+
+.dropdown-content {
+    min-width: 150px;
+}
+
+#error_explanation {
+    border-radius: 5px;
+    background-color: #f44336;
+    color: #fff;
+    padding: 1px 10px 1px 10px;
+}

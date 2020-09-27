@@ -1,0 +1,49 @@
+<%= form_for @content, html: { multipart: true } do |form| %>
+  <% if content.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(content.errors.count, "error") %> non permettono al form di essere inviato:</h5>
+
+      <ul>
+      <% content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p class="grey-text">Aggiungi il contenuto che vuoi vendere</p>
+    <%= form.file_field :allegato %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <p class="grey-text">Titolo</p>
+    <%= form.text_field :titolo %>
+  </div>
+
+  <div class="field">
+    <p class="grey-text">Descrizione</p>
+    <%= form.text_area :desc, class: "materialize-textarea" %>
+  </div>
+
+  <div class="field">
+    <p class="grey-text">Prezzo</p>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <p class="grey-text">Cover</p>
+    <%= form.file_field :cover %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="actions">
+    <%= form.submit 'Salva', class: "btn deep-orange darken-4" %>
+  </div>
+<% end %>
+<br>

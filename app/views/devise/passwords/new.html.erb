@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col s12 l6 offset-l3">
+    <h3>Hai dimenticato la password?</h3>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <br>
+
+      <div class="actions">
+        <%= f.submit "Resetta password", class: "waves-effect waves-light btn btn-devise-input deep-orange darken-4" %>
+      </div>
+    <% end %>
+
+    <br>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

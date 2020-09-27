@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col s12 l6 offset-l3">
+    <h3>Modifica Profilo</h3>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :password %> <i>(Lascia il campo vuoto se non vuoi cambiare password)</i>
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> caratteri minimo)</em>
+          <% end %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password %> <i>(Inserisci password attuale)</i>
+        <%= f.password_field :current_password, autocomplete: "current-password" %>
+      </div>
+
+      <br>
+
+      <div class="actions">
+        <%= f.submit "Aggiorna", class: "waves-effect waves-light btn btn-devise-input deep-orange darken-4" %>
+        <br><br>
+        <%= link_to "Torna Indietro", :back, class: "waves-effect waves-light btn btn-devise-link white" %>
+      </div>
+    <% end %>
+
+    <h3>Elimina Account</h3>
+
+    <%= button_to "Elimina Account", registration_path(resource_name), data: { confirm: "Sei sicuro di voler eliminare il tuo account?" }, method: :delete, class: "waves-effect waves-light btn btn-devise-input red" %>
+
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nikola's Books</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+   
+    <%= render "layouts/header" %>
+
+    <div class="container">
+      <% flash.each do |type, message| %>
+        <script>
+          M.toast({html: '<%= message %>', classes: 'yellow darken-4'})
+        </script>
+      <% end %>
+    </div>
+
+    <%= render 'pages/slider' if action_name == 'home' %>
+
+    <main class="container">
+      <%= yield %>
+    </main>
+
+    <%= render "layouts/footer" %>
+    
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".dropdown-trigger").dropdown();
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.tabs').tabs();
+    });
+  </script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+  </script>
+</html>
